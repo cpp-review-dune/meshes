@@ -1,0 +1,21 @@
+image: ghcr.io/cpp-review-dune/introductory-review/meshes
+
+tasks:
+  - name: Starting server
+    command: |
+      startJupyter &
+
+  - name: Docs server
+    command: |
+      # https://bugs.python.org/issue43387
+      python -m pydoc -p 35559
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+  - port: 8888
+    onOpen: open-browser
+  - port: 35559
+    onOpen: open-browser
+  # - port: 8080
+  #   onOpen: notify
