@@ -3,18 +3,15 @@ image: ghcr.io/cpp-review-dune/introductory-review/meshes
 tasks:
   - name: Starting server
     command: |
+      pushd gmsh
+      julia -e 'using Pkg; Pkg.activate(""); Pkg.update()' # using IJulia; notebook(dir=pwd(), detached=true)
+      popd
       startJupyter &
 
   - name: Docs server
     command: |
       # https://bugs.python.org/issue43387
       python -m pydoc -p 35559
-
-  - name: Add IJulia
-    command: |
-      pushd gmsh
-      julia -e 'using Pkg; Pkg.activate(""); Pkg.update(); using IJulia; notebook(dir=pwd(), detached=true)'
-      popd
 
 ports:
   - port: 8080
