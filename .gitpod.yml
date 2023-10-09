@@ -1,4 +1,4 @@
-image: ghcr.io/cpp-review-dune/introductory-review/meshes
+image: ghcr.io/cpp-review-dune/introductory-review/jupyter-meshes
 
 tasks:
   - name: Starting server
