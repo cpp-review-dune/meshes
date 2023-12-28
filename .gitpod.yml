@@ -5,7 +5,7 @@ tasks:
     command: |
       pushd gmsh
       ./updater.sh
-      julia -e 'using IJulia; notebook(dir=pwd(), detached=true)'
+      julia -e 'using Pkg; Pkg.activate(""); using IJulia; notebook(dir=pwd(), detached=true)'
       popd
       startJupyter &
 
