@@ -11,6 +11,6 @@ if [[ $NEW_VERSION -gt $OLD_VERSION ]]; then
   if [ -f Project.toml ]; then
     printf '%s\n' "Removing Lock file"
     rm -r *.toml
-    julia -e 'using Pkg; Pkg.activate(""); Pkg.add("IJulia")'
+    julia -e 'using Pkg; Pkg.activate(""); Pkg.add("IJulia"); Pkg.update();'
   fi
 fi
