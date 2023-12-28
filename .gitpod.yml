@@ -4,7 +4,8 @@ tasks:
   - name: Starting server
     command: |
       pushd gmsh
-      julia -e 'using Pkg; Pkg.activate(""); Pkg.update()' # using IJulia; notebook(dir=pwd(), detached=true)
+      ./updater.sh
+      # julia -e 'using Pkg; Pkg.activate(""); Pkg.update()' # using IJulia; notebook(dir=pwd(), detached=true)
       popd
       startJupyter &
 
