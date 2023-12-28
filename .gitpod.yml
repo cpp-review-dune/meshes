@@ -3,7 +3,7 @@ image: ghcr.io/cpp-review-dune/introductory-review/jupyter-meshes
 tasks:
   - name: Starting server
     command: |
-      pushd gmsh
+      pushd notebook
       ./updater.sh
       julia -e 'using Pkg; Pkg.activate(""); Pkg.update(); using IJulia; notebook(dir=pwd(), detached=true)'
       popd
